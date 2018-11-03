@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pump control</title>
+    <link href='main.css' rel='stylesheet' type='text/css'>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="144x144"  href="/favicon-144x144.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon.ico">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#00878f">
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'>
+    <script src="WebSocket.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <center>
+        <header>
+            <h1>Pump control</h1>
+        </header>
+		<div class="row">
+			<div class="column">
+				<p >Measured pressure:</p>
+				<p id="p1">NaN Pa</p>
+			</div>
+			<div class="column">
+				<p >Measured flow rate:</p>
+				<p id="p2">NaN m^3/sec</p>
+			</div>			
+		</div>
+        <div class="row">
+			<div style="flex: 25%">Data to ESP: </div>
+            <div style="flex: 75%"><input class="enabled" id="dataToESPSlider" type="range" min="0" max="1023" step="1" oninput="sliderDataToESP();" value="0"> </div>
+		</div>
+		<div class="row">
+            <p class="column"><button id="bitToESPButton" class="button" style="background-color:#999" onclick="flipBitToESP();">Bit to ESP</button></p>
+			<p class="column"><button class="button" href="/edit.html" style="background-color:##00878F">Edit</button></p>
+		</div>
+    </center>
+</body>
+</html>
